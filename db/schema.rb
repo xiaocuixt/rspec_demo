@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160123085441) do
+ActiveRecord::Schema.define(version: 20160419070412) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "title",      limit: 255
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 20160123085441) do
     t.boolean  "published"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+  end
+
+  create_table "vehicles", force: :cascade do |t|
+    t.string   "model",      limit: 255
+    t.string   "make",       limit: 255
+    t.string   "year",       limit: 255
+    t.string   "style",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end
