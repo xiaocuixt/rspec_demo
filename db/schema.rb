@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419070412) do
+ActiveRecord::Schema.define(version: 20160419080246) do
+
+  create_table "mpg_submissions", force: :cascade do |t|
+    t.decimal  "mpg",                  precision: 6, scale: 2
+    t.integer  "vehicle_id", limit: 4
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+  end
+
+  add_index "mpg_submissions", ["vehicle_id"], name: "index_mpg_submissions_on_vehicle_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "title",      limit: 255
@@ -30,4 +39,5 @@ ActiveRecord::Schema.define(version: 20160419070412) do
     t.datetime "updated_at",             null: false
   end
 
+  add_foreign_key "mpg_submissions", "vehicles"
 end
