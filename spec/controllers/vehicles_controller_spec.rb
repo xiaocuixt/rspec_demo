@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe VehiclesControllerss do
+describe VehiclesController do
   describe 'POST #create' do
     context 'with valid attributes' do
       it 'creates the vehicle' do
